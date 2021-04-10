@@ -19,7 +19,7 @@ class CreateResTable extends Migration
         });
 
         Schema::create('res', function (Blueprint $table) {
-            $table->uuid('uid');
+            $table->uuid('uid')->primary();
             $table->string('name');
             $table->boolean('rent_flag')->default(false);
             $table->boolean('sell_flag')->default(false);

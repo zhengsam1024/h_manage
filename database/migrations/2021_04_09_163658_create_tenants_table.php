@@ -16,10 +16,8 @@ class CreateTenantsTable extends Migration
         Schema::create('tenants', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('res_uid');
-            $table->foreign('res_uid')->on('res')->references('uid');
-            $table->string('_address');
-            $table->unsignedBigInteger('res_id');
+            $table->foreignUuid('res_uid')->references('uid')->on('res');
+            $table->json('contents');
             $table->timestamps();
         });
     }
