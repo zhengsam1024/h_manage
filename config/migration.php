@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'salespeople' => 'salespeople',
+    'salespeople'   => 'salespeoples',
+    'res_type'      => 'res_type',
 ];
