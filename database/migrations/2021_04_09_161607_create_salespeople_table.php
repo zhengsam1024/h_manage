@@ -15,21 +15,21 @@ class CreateSalespeopleTable extends Migration
     {
         Schema::create('salespeoples', function (Blueprint $table) {
             $table->id();
-            $table->string('account')->uniqid();
+            $table->string('account')->unique();
             $table->string('password');
             $table->date('last_logined')->nullable();
             $table->timestamps();
         });
 
-        Schema::create('salespeople_data', function (Blueprint $table) {
-            $table->unsignedBigInteger('sales_id')->primary();
-            $table->foreign('sales_id')->on('salespeoples')->references('id');
-            $table->string('name');
-            $table->json('phones');
-            $table->string('line_id')->nullable();
-            $table->boolean('status')->default(false);
-            $table->timestamps();
-        });
+        // Schema::create('salespeople_data', function (Blueprint $table) {
+        //     $table->unsignedBigInteger('sales_id')->primary();
+        //     $table->foreign('sales_id')->on('salespeoples')->references('id');
+        //     $table->string('name');
+        //     $table->json('phones');
+        //     $table->string('line_id')->nullable();
+        //     $table->boolean('status')->default(false);
+        //     $table->timestamps();
+        // });
     }
 
     /**

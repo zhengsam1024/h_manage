@@ -23,9 +23,9 @@ class SalespeopleFactory extends Factory
     public function definition()
     {
         return [
-            'account' => $this->faker->userName,
+            'account' => $this->faker->userName(),
             'password' => Hash::make('password'),
-            'last_logined' => Carbon::now(),
+            'last_logined' => "2021-02-30",
         ];
     }
 }

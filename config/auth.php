@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'salespeople',
         'passwords' => 'users',
     ],
 
@@ -46,6 +46,11 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'salespeople' => [
+            'driver' => 'jwt',
+            'provider' => 'salespeoples'
+        ]
     ],
 
     /*
@@ -71,6 +76,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
+        'salespeoples' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Salespeople::class,
+        ]
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
